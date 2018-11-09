@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		488C88A72195686F009AD656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C88A62195686F009AD656 /* AppDelegate.swift */; };
+		488C88A92195686F009AD656 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 488C88A82195686F009AD656 /* GameScene.sks */; };
+		488C88AB2195686F009AD656 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 488C88AA2195686F009AD656 /* Actions.sks */; };
+		488C88AD2195686F009AD656 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C88AC2195686F009AD656 /* GameScene.swift */; };
+		488C88AF2195686F009AD656 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C88AE2195686F009AD656 /* GameViewController.swift */; };
+		488C88B22195686F009AD656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488C88B02195686F009AD656 /* Main.storyboard */; };
+		488C88B421956870009AD656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488C88B321956870009AD656 /* Assets.xcassets */; };
+		488C88B721956870009AD656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488C88B521956870009AD656 /* LaunchScreen.storyboard */; };
+		488C88C221956870009AD656 /* EunseoAdventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C88C121956870009AD656 /* EunseoAdventureTests.swift */; };
+		488C88CD21956870009AD656 /* EunseoAdventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C88CC21956870009AD656 /* EunseoAdventureUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		488C88BE21956870009AD656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488C889B2195686F009AD656 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488C88A22195686F009AD656;
+			remoteInfo = EunseoAdventure;
+		};
+		488C88C921956870009AD656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488C889B2195686F009AD656 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488C88A22195686F009AD656;
+			remoteInfo = EunseoAdventure;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		488C88A32195686F009AD656 /* EunseoAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EunseoAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		488C88A62195686F009AD656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		488C88A82195686F009AD656 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		488C88AA2195686F009AD656 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		488C88AC2195686F009AD656 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		488C88AE2195686F009AD656 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		488C88B12195686F009AD656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		488C88B321956870009AD656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		488C88B621956870009AD656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		488C88B821956870009AD656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488C88BD21956870009AD656 /* EunseoAdventureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EunseoAdventureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		488C88C121956870009AD656 /* EunseoAdventureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EunseoAdventureTests.swift; sourceTree = "<group>"; };
+		488C88C321956870009AD656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488C88C821956870009AD656 /* EunseoAdventureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EunseoAdventureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		488C88CC21956870009AD656 /* EunseoAdventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EunseoAdventureUITests.swift; sourceTree = "<group>"; };
+		488C88CE21956870009AD656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488C88DA2195713B009AD656 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		488C88A02195686F009AD656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C88BA21956870009AD656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C88C521956870009AD656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		488C889A2195686F009AD656 = {
+			isa = PBXGroup;
+			children = (
+				488C88DA2195713B009AD656 /* README.md */,
+				488C88A52195686F009AD656 /* EunseoAdventure */,
+				488C88C021956870009AD656 /* EunseoAdventureTests */,
+				488C88CB21956870009AD656 /* EunseoAdventureUITests */,
+				488C88A42195686F009AD656 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		488C88A42195686F009AD656 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				488C88A32195686F009AD656 /* EunseoAdventure.app */,
+				488C88BD21956870009AD656 /* EunseoAdventureTests.xctest */,
+				488C88C821956870009AD656 /* EunseoAdventureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		488C88A52195686F009AD656 /* EunseoAdventure */ = {
+			isa = PBXGroup;
+			children = (
+				488C88A62195686F009AD656 /* AppDelegate.swift */,
+				488C88A82195686F009AD656 /* GameScene.sks */,
+				488C88AA2195686F009AD656 /* Actions.sks */,
+				488C88AC2195686F009AD656 /* GameScene.swift */,
+				488C88AE2195686F009AD656 /* GameViewController.swift */,
+				488C88B02195686F009AD656 /* Main.storyboard */,
+				488C88B321956870009AD656 /* Assets.xcassets */,
+				488C88B521956870009AD656 /* LaunchScreen.storyboard */,
+				488C88B821956870009AD656 /* Info.plist */,
+			);
+			path = EunseoAdventure;
+			sourceTree = "<group>";
+		};
+		488C88C021956870009AD656 /* EunseoAdventureTests */ = {
+			isa = PBXGroup;
+			children = (
+				488C88C121956870009AD656 /* EunseoAdventureTests.swift */,
+				488C88C321956870009AD656 /* Info.plist */,
+			);
+			path = EunseoAdventureTests;
+			sourceTree = "<group>";
+		};
+		488C88CB21956870009AD656 /* EunseoAdventureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				488C88CC21956870009AD656 /* EunseoAdventureUITests.swift */,
+				488C88CE21956870009AD656 /* Info.plist */,
+			);
+			path = EunseoAdventureUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		488C88A22195686F009AD656 /* EunseoAdventure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488C88D121956870009AD656 /* Build configuration list for PBXNativeTarget "EunseoAdventure" */;
+			buildPhases = (
+				488C889F2195686F009AD656 /* Sources */,
+				488C88A02195686F009AD656 /* Frameworks */,
+				488C88A12195686F009AD656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EunseoAdventure;
+			productName = EunseoAdventure;
+			productReference = 488C88A32195686F009AD656 /* EunseoAdventure.app */;
+			productType = "com.apple.product-type.application";
+		};
+		488C88BC21956870009AD656 /* EunseoAdventureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488C88D421956870009AD656 /* Build configuration list for PBXNativeTarget "EunseoAdventureTests" */;
+			buildPhases = (
+				488C88B921956870009AD656 /* Sources */,
+				488C88BA21956870009AD656 /* Frameworks */,
+				488C88BB21956870009AD656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				488C88BF21956870009AD656 /* PBXTargetDependency */,
+			);
+			name = EunseoAdventureTests;
+			productName = EunseoAdventureTests;
+			productReference = 488C88BD21956870009AD656 /* EunseoAdventureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		488C88C721956870009AD656 /* EunseoAdventureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488C88D721956870009AD656 /* Build configuration list for PBXNativeTarget "EunseoAdventureUITests" */;
+			buildPhases = (
+				488C88C421956870009AD656 /* Sources */,
+				488C88C521956870009AD656 /* Frameworks */,
+				488C88C621956870009AD656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				488C88CA21956870009AD656 /* PBXTargetDependency */,
+			);
+			name = EunseoAdventureUITests;
+			productName = EunseoAdventureUITests;
+			productReference = 488C88C821956870009AD656 /* EunseoAdventureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		488C889B2195686F009AD656 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = samchon;
+				TargetAttributes = {
+					488C88A22195686F009AD656 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					488C88BC21956870009AD656 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 488C88A22195686F009AD656;
+					};
+					488C88C721956870009AD656 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 488C88A22195686F009AD656;
+					};
+				};
+			};
+			buildConfigurationList = 488C889E2195686F009AD656 /* Build configuration list for PBXProject "EunseoAdventure" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 488C889A2195686F009AD656;
+			productRefGroup = 488C88A42195686F009AD656 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				488C88A22195686F009AD656 /* EunseoAdventure */,
+				488C88BC21956870009AD656 /* EunseoAdventureTests */,
+				488C88C721956870009AD656 /* EunseoAdventureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		488C88A12195686F009AD656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C88B22195686F009AD656 /* Main.storyboard in Resources */,
+				488C88A92195686F009AD656 /* GameScene.sks in Resources */,
+				488C88B421956870009AD656 /* Assets.xcassets in Resources */,
+				488C88B721956870009AD656 /* LaunchScreen.storyboard in Resources */,
+				488C88AB2195686F009AD656 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C88BB21956870009AD656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C88C621956870009AD656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		488C889F2195686F009AD656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C88AD2195686F009AD656 /* GameScene.swift in Sources */,
+				488C88AF2195686F009AD656 /* GameViewController.swift in Sources */,
+				488C88A72195686F009AD656 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C88B921956870009AD656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C88C221956870009AD656 /* EunseoAdventureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C88C421956870009AD656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C88CD21956870009AD656 /* EunseoAdventureUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		488C88BF21956870009AD656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488C88A22195686F009AD656 /* EunseoAdventure */;
+			targetProxy = 488C88BE21956870009AD656 /* PBXContainerItemProxy */;
+		};
+		488C88CA21956870009AD656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488C88A22195686F009AD656 /* EunseoAdventure */;
+			targetProxy = 488C88C921956870009AD656 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		488C88B02195686F009AD656 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				488C88B12195686F009AD656 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		488C88B521956870009AD656 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				488C88B621956870009AD656 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		488C88CF21956870009AD656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		488C88D021956870009AD656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		488C88D221956870009AD656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CA736F4E8H;
+				INFOPLIST_FILE = EunseoAdventure/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.samchon.EunseoAdventure;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		488C88D321956870009AD656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CA736F4E8H;
+				INFOPLIST_FILE = EunseoAdventure/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.samchon.EunseoAdventure;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		488C88D521956870009AD656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CA736F4E8H;
+				INFOPLIST_FILE = EunseoAdventureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.samchon.EunseoAdventureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EunseoAdventure.app/EunseoAdventure";
+			};
+			name = Debug;
+		};
+		488C88D621956870009AD656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CA736F4E8H;
+				INFOPLIST_FILE = EunseoAdventureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.samchon.EunseoAdventureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EunseoAdventure.app/EunseoAdventure";
+			};
+			name = Release;
+		};
+		488C88D821956870009AD656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CA736F4E8H;
+				INFOPLIST_FILE = EunseoAdventureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.samchon.EunseoAdventureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EunseoAdventure;
+			};
+			name = Debug;
+		};
+		488C88D921956870009AD656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CA736F4E8H;
+				INFOPLIST_FILE = EunseoAdventureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.samchon.EunseoAdventureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EunseoAdventure;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		488C889E2195686F009AD656 /* Build configuration list for PBXProject "EunseoAdventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C88CF21956870009AD656 /* Debug */,
+				488C88D021956870009AD656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488C88D121956870009AD656 /* Build configuration list for PBXNativeTarget "EunseoAdventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C88D221956870009AD656 /* Debug */,
+				488C88D321956870009AD656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488C88D421956870009AD656 /* Build configuration list for PBXNativeTarget "EunseoAdventureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C88D521956870009AD656 /* Debug */,
+				488C88D621956870009AD656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488C88D721956870009AD656 /* Build configuration list for PBXNativeTarget "EunseoAdventureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C88D821956870009AD656 /* Debug */,
+				488C88D921956870009AD656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 488C889B2195686F009AD656 /* Project object */;
+}
