@@ -17,6 +17,7 @@
 		488C88B721956870009AD656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488C88B521956870009AD656 /* LaunchScreen.storyboard */; };
 		488C88C221956870009AD656 /* EunseoAdventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C88C121956870009AD656 /* EunseoAdventureTests.swift */; };
 		488C88CD21956870009AD656 /* EunseoAdventureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C88CC21956870009AD656 /* EunseoAdventureUITests.swift */; };
+		4899A2EA21996BE800D17038 /* PlayerStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899A2E921996BE800D17038 /* PlayerStateMachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		488C88CC21956870009AD656 /* EunseoAdventureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EunseoAdventureUITests.swift; sourceTree = "<group>"; };
 		488C88CE21956870009AD656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488C88DA2195713B009AD656 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4899A2E921996BE800D17038 /* PlayerStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStateMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				488C88B321956870009AD656 /* Assets.xcassets */,
 				488C88B521956870009AD656 /* LaunchScreen.storyboard */,
 				488C88B821956870009AD656 /* Info.plist */,
+				4899A2E921996BE800D17038 /* PlayerStateMachine.swift */,
 			);
 			path = EunseoAdventure;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				488C88AD2195686F009AD656 /* GameScene.swift in Sources */,
 				488C88AF2195686F009AD656 /* GameViewController.swift in Sources */,
+				4899A2EA21996BE800D17038 /* PlayerStateMachine.swift in Sources */,
 				488C88A72195686F009AD656 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

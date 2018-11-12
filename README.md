@@ -1,4 +1,5 @@
 #  SpriteKit
+- visual
 - Create 2D sprite-based games using an optimized animation system, physics simulation, and event-handling support.
 - xCode project 생성시 game 템플릿을 선택하면 된다
 - .sks 확장자 파일이 게임을 위한 scene 파일이다
@@ -10,6 +11,14 @@
 - SKScene : The root node for all Sprite Kit objects displayed in a view.
 
 
+--- 
+
 # GamePlayKit
+- logic
 - Architect and organize your game logic. Incorporate common gameplay behaviors such as random number generation, artificial intelligence, pathfinding, and agent behavior.
 
+## GKState
+- The abstract superclass for defining state-specific logic as part of a state machine.
+
+## GKStateMachine
+- A finite-state machine—a collection of state objects that each define logic for a particular state of gameplay and rules for transitioning between states.

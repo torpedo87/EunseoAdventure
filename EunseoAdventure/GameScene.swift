@@ -27,12 +27,25 @@ class GameScene: SKScene {
   var isPlayerFacingRight = true
   let playerSpeed: Double = 4
   
+  //player state
+  var playerStateMachine: GKStateMachine!
+  
   //viewdidload
   override func didMove(to view: SKView) {
     player = childNode(withName: "player")
     joystick = childNode(withName: "joystick")
     knob = joystick?.childNode(withName: "knob")
     
+    playerStateMachine = GKStateMachine(states: [
+      JumpingState(playerNode: player!),
+      WalkingState(playerNode: player!),
+      IdleState(playerNode: player!),
+      LandingState(playerNode: player!),
+      StunnedState(playerNode: player!)
+      ])
+    
+    //멍때리는 상태로 시작
+    playerStateMachine.enter(IdleState.self)
   }
 }
 
@@ -43,6 +56,13 @@ extension GameScene {
       if let knob = knob {
         let location = touch.location(in: joystick!)
         isJoystickActing = knob.frame.contains(location)
+      }
+      
+      let location = touch.location(in: self)
+      
+      //바깥 터치하면 플레이어 점프
+      if !(joystick?.contains(location))! {
+        playerStateMachine.enter(JumpingState.self)
       }
     }
   }
@@ -102,6 +122,15 @@ extension GameScene {
     //player Movement
     guard let knob = knob else { return }
     let xPosition = Double(knob.position.x)
+    
+    //걸어다니는 애니메이션
+    let positivePosition = xPosition > 0 ? -xPosition : xPosition
+    if floor(positivePosition) != 0 {
+      playerStateMachine.enter(WalkingState.self)
+    } else {
+      playerStateMachine.enter(IdleState.self)
+    }
+    
     let displacement = CGVector(dx: deltaTime * xPosition * playerSpeed, dy: 0)
     let moveAction = SKAction.move(by: displacement, duration: 0)
     let totalAction: SKAction!
