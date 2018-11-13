@@ -9,7 +9,7 @@
 ## SKView
 - An object that displays SpriteKit content. This content is provided by an SKScene object.
 - SKScene : The root node for all Sprite Kit objects displayed in a view.
-
+- SKScene의 camera 이름을 camera 라고 하면 안되고 다른 이름 써야함
 
 --- 
 
