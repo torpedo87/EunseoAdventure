@@ -11,6 +11,14 @@
 - SKScene : The root node for all Sprite Kit objects displayed in a view.
 - SKScene의 camera 이름을 camera 라고 하면 안되고 다른 이름 써야함
 
+## SKPhysicsContactDelegate
+- Methods your app can implement to respond when physics bodies come into contact.
+
+## SKPhysicsBody
+- An object which adds physics simulation to a node.
+- categoryBitMask : A mask that defines which categories this physics body belongs to. ( 내 번호)
+- collisionBitMask : A mask that defines which categories of physics bodies can collide with this physics body. (충돌가능한 놈의 번호)
+
 --- 
 
 # GamePlayKit

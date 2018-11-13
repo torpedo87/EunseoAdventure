@@ -39,6 +39,8 @@ class GameScene: SKScene {
   
   //viewdidload
   override func didMove(to view: SKView) {
+    physicsWorld.contactDelegate = self
+    
     player = childNode(withName: "player")
     joystick = childNode(withName: "joystick")
     knob = joystick?.childNode(withName: "knob")
@@ -181,5 +183,37 @@ extension GameScene {
     
     let parallax5 = SKAction.moveTo(x: (cameraNode?.position.x)!, duration: 0)
     stars?.run(parallax5)
+  }
+}
+
+//collision
+extension GameScene: SKPhysicsContactDelegate {
+  
+  struct Collision {
+    
+    enum Masks: Int {
+      case killing, player, reward, ground
+      var bitmask: UInt32 {
+        return 1 << self.rawValue
+      }
+    }
+    
+    let masks: (first: UInt32, second: UInt32)
+    
+    func matches(_ first: Masks, _ second: Masks) -> Bool {
+      return (first.bitmask == masks.first && second.bitmask == masks.second) ||
+        (first.bitmask == masks.second && second.bitmask == masks.first)
+    }
+  }
+  
+  func didBegin(_ contact: SKPhysicsContact) {
+    let collision = Collision(masks: (first: contact.bodyA.categoryBitMask,
+                                      second: contact.bodyB.categoryBitMask))
+    
+    //플레이어가 트랩에 부딪히면 시작 위치로
+    if collision.matches(.player, .killing) {
+      let die = SKAction.move(to: CGPoint(x: -300, y: -100), duration: 0)
+      player?.run(die)
+    }
   }
 }
