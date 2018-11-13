@@ -26,10 +26,10 @@ class JumpingState: PlayerState {
   
   override func isValidNextState(_ stateClass: AnyClass) -> Bool {
     
-//    if hasFinishedJumping && stateClass is LandingState.Type {
-//      return true
-//    }
-    return true
+    if hasFinishedJumping && stateClass is LandingState.Type {
+      return true
+    }
+    return false
   }
   
   //jump image

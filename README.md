@@ -18,6 +18,8 @@
 - An object which adds physics simulation to a node.
 - categoryBitMask : A mask that defines which categories this physics body belongs to. ( 내 번호)
 - collisionBitMask : A mask that defines which categories of physics bodies can collide with this physics body. (충돌가능한 놈의 번호)
+- contactTestBitMask : A mask that defines which categories of bodies cause intersection notifications with this physics body.
+- fieldBitMask : A mask that defines which categories of physics fields can exert forces on this physics body.
 
 --- 
 

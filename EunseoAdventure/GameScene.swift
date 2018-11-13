@@ -61,6 +61,11 @@ class GameScene: SKScene {
     
     //멍때리는 상태로 시작
     playerStateMachine.enter(IdleState.self)
+    
+    //timer
+    Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+      self.spawnMeteor()
+    }
   }
 }
 
@@ -215,5 +220,66 @@ extension GameScene: SKPhysicsContactDelegate {
       let die = SKAction.move(to: CGPoint(x: -300, y: -100), duration: 0)
       player?.run(die)
     }
+    
+    if collision.matches(.player, .ground) {
+      playerStateMachine.enter(LandingState.self)
+    }
+    
+    //별똥별이 땅에 떨어지면 사라진다
+    if collision.matches(.ground, .killing) {
+      if contact.bodyA.node?.name == "Meteor", let meteor = contact.bodyA.node {
+        createMolten(at: meteor.position)
+        meteor.removeFromParent()
+      }
+      if contact.bodyB.node?.name == "Meteor", let meteor = contact.bodyB.node {
+        createMolten(at: meteor.position)
+        meteor.removeFromParent()
+      }
+    }
+  }
+}
+
+//meteor
+extension GameScene {
+  
+  func spawnMeteor() {
+    let meteorNode = SKSpriteNode(imageNamed: "meteor")
+    meteorNode.name = "Meteor"
+    let randomXPosition = Int(arc4random_uniform(UInt32(self.size.width)))
+    meteorNode.position = CGPoint(x: randomXPosition, y: 270)
+    meteorNode.anchorPoint = CGPoint(x: 0.5, y: 1)
+    meteorNode.zPosition = 5
+    
+    let physicsBody = SKPhysicsBody(circleOfRadius: 30)
+    meteorNode.physicsBody = physicsBody
+    physicsBody.categoryBitMask = Collision.Masks.killing.bitmask
+    physicsBody.collisionBitMask = Collision.Masks.player.bitmask | Collision.Masks.ground.bitmask
+    physicsBody.contactTestBitMask = Collision.Masks.player.bitmask | Collision.Masks.ground.bitmask
+    physicsBody.fieldBitMask = Collision.Masks.player.bitmask | Collision.Masks.ground.bitmask
+    
+    physicsBody.affectedByGravity = true
+    physicsBody.allowsRotation = false
+    physicsBody.restitution = 0.2
+    physicsBody.friction = 10
+    
+    addChild(meteorNode)
+  }
+  
+  func createMolten(at position: CGPoint) {
+    let moltenNode = SKSpriteNode(imageNamed: "molten")
+    moltenNode.position.x = position.x
+    moltenNode.position.y = position.y - 60
+    moltenNode.zPosition = 4
+    
+    addChild(moltenNode)
+    
+    let action = SKAction.sequence([
+        SKAction.fadeIn(withDuration: 0.1),
+        SKAction.wait(forDuration: 3),
+        SKAction.fadeOut(withDuration: 0.2),
+        SKAction.removeFromParent()
+      ])
+    
+    moltenNode.run(action)
   }
 }
