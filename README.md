@@ -21,6 +21,9 @@
 - contactTestBitMask : A mask that defines which categories of bodies cause intersection notifications with this physics body.
 - fieldBitMask : A mask that defines which categories of physics fields can exert forces on this physics body.
 
+## SKLabelNode
+- A node that displays a text label.
+
 --- 
 
 # GamePlayKit

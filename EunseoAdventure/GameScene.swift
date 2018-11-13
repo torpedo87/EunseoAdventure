@@ -25,9 +25,14 @@ class GameScene: SKScene {
   
   //boolean
   var isJoystickActing = false
+  var rewardIsNotTouched = true
   
   //measure
   var knobRadius: CGFloat = 50.0
+  
+  //score
+  let scoreLabel = SKLabelNode()
+  var score = 0
   
   //sprite engine
   var previousTimeInterval: TimeInterval = 0
@@ -66,6 +71,14 @@ class GameScene: SKScene {
     Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
       self.spawnMeteor()
     }
+    
+    scoreLabel.position = CGPoint(x: (cameraNode?.position.x)! + 310, y: 140)
+    scoreLabel.fontColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+    scoreLabel.fontSize = 24
+    scoreLabel.fontName = "AvenirNext-Bold"
+    scoreLabel.horizontalAlignmentMode = .right
+    scoreLabel.text = String(score)
+    cameraNode?.addChild(scoreLabel)
   }
 }
 
@@ -131,6 +144,11 @@ extension GameScene {
     knob?.run(moveBackAction)
     isJoystickActing = false
   }
+  
+  func rewardTouch() {
+    score += 1
+    scoreLabel.text = String(score)
+  }
 }
 
 //gameloop
@@ -138,6 +156,8 @@ extension GameScene {
   override func update(_ currentTime: TimeInterval) {
     let deltaTime = currentTime - previousTimeInterval
     previousTimeInterval = currentTime
+    
+    rewardIsNotTouched = true
     
     //camera
     cameraNode?.position.x = player!.position.x
@@ -225,13 +245,29 @@ extension GameScene: SKPhysicsContactDelegate {
       playerStateMachine.enter(LandingState.self)
     }
     
+    if collision.matches(.player, .reward) {
+      if contact.bodyA.node?.name == "jewel" {
+        contact.bodyA.node?.physicsBody?.categoryBitMask = 0
+        contact.bodyA.node?.removeFromParent()
+      }
+      else if contact.bodyB.node?.name == "jewel" {
+        contact.bodyB.node?.physicsBody?.categoryBitMask = 0
+        contact.bodyB.node?.removeFromParent()
+      }
+      
+      if rewardIsNotTouched {
+        rewardTouch()
+        rewardIsNotTouched = false
+      }
+    }
+    
     //별똥별이 땅에 떨어지면 사라진다
     if collision.matches(.ground, .killing) {
       if contact.bodyA.node?.name == "Meteor", let meteor = contact.bodyA.node {
         createMolten(at: meteor.position)
         meteor.removeFromParent()
       }
-      if contact.bodyB.node?.name == "Meteor", let meteor = contact.bodyB.node {
+      else if contact.bodyB.node?.name == "Meteor", let meteor = contact.bodyB.node {
         createMolten(at: meteor.position)
         meteor.removeFromParent()
       }
