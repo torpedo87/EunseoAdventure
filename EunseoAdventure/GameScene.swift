@@ -54,7 +54,7 @@ class GameScene: SKScene {
     player = childNode(withName: "player")
     joystick = childNode(withName: "joystick")
     knob = joystick?.childNode(withName: "knob")
-    cameraNode = childNode(withName: "cameraNode") as! SKCameraNode
+    cameraNode = childNode(withName: "cameraNode") as? SKCameraNode
     mountain1 = childNode(withName: "mountain1")
     mountain2 = childNode(withName: "mountain2")
     mountain3 = childNode(withName: "mountain3")
@@ -183,6 +183,7 @@ extension GameScene {
         }
       } else {
         dying()
+        showDyingScene()
       }
       
       invincible()
@@ -204,6 +205,12 @@ extension GameScene {
     self.removeAllActions()
     
     fillHearts(count: 3)
+  }
+  
+  func showDyingScene() {
+    let gameOverScene = GameScene(fileNamed: "GameOver")
+    self.view?.presentScene(gameOverScene)
+    
   }
 }
 
