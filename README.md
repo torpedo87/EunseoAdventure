@@ -1,4 +1,5 @@
 #  SpriteKit
+
 - visual
 - Create 2D sprite-based games using an optimized animation system, physics simulation, and event-handling support.
 - xCode project 생성시 game 템플릿을 선택하면 된다
@@ -7,14 +8,19 @@
 
 
 ## SKView
+
 - An object that displays SpriteKit content. This content is provided by an SKScene object.
 - SKScene : The root node for all Sprite Kit objects displayed in a view.
 - SKScene의 camera 이름을 camera 라고 하면 안되고 다른 이름 써야함
+- didMove(to:) : Called immediately after a scene is presented by a view.
+
 
 ## SKPhysicsContactDelegate
+
 - Methods your app can implement to respond when physics bodies come into contact.
 
 ## SKPhysicsBody
+
 - An object which adds physics simulation to a node.
 - categoryBitMask : A mask that defines which categories this physics body belongs to. ( 내 번호)
 - collisionBitMask : A mask that defines which categories of physics bodies can collide with this physics body. (충돌가능한 놈의 번호)
@@ -24,14 +30,30 @@
 ## SKLabelNode
 - A node that displays a text label.
 
+
 --- 
 
 # GamePlayKit
+
 - logic
 - Architect and organize your game logic. Incorporate common gameplay behaviors such as random number generation, artificial intelligence, pathfinding, and agent behavior.
 
+
 ## GKState
+
 - The abstract superclass for defining state-specific logic as part of a state machine.
 
+
 ## GKStateMachine
+
 - A finite-state machine—a collection of state objects that each define logic for a particular state of gameplay and rules for transitioning between states.
+
+
+## didEnter(from:)
+
+- Performs custom actions when a state machine transitions into this state.
+
+
+## isValidNextState(_:)
+
+- Returns a Boolean value indicating whether a state machine currently in this state is allowed to transition into the specified state.

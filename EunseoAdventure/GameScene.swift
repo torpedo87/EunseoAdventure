@@ -26,6 +26,7 @@ class GameScene: SKScene {
   //boolean
   var isJoystickActing = false
   var rewardIsNotTouched = true
+  var isHit = false
   
   //measure
   var knobRadius: CGFloat = 50.0
@@ -33,6 +34,10 @@ class GameScene: SKScene {
   //score
   let scoreLabel = SKLabelNode()
   var score = 0
+  
+  //life
+  var heartsArray = [SKSpriteNode]()
+  var heartContainer = SKSpriteNode()
   
   //sprite engine
   var previousTimeInterval: TimeInterval = 0
@@ -55,6 +60,12 @@ class GameScene: SKScene {
     mountain3 = childNode(withName: "mountain3")
     moon = childNode(withName: "moon")
     stars = childNode(withName: "stars")
+    
+    //life
+    heartContainer.position = CGPoint(x: -300, y: 140)
+    heartContainer.zPosition = 5
+    cameraNode?.addChild(heartContainer)
+    fillHearts(count: 3)
     
     playerStateMachine = GKStateMachine(states: [
       JumpingState(playerNode: player!),
@@ -149,6 +160,51 @@ extension GameScene {
     score += 1
     scoreLabel.text = String(score)
   }
+  
+  func fillHearts(count: Int) {
+    for index in 1...count {
+      let heart = SKSpriteNode(imageNamed: "heart")
+      let xPosition = heart.size.width * CGFloat(index - 1)
+      heart.position = CGPoint(x: xPosition, y: 0)
+      heartsArray.append(heart)
+      heartContainer.addChild(heart)
+    }
+  }
+  
+  func loseHeart() {
+    if isHit {
+      let lastElementIndex = heartsArray.count - 1
+      if heartsArray.indices.contains(lastElementIndex - 1) {
+        let lastHeart = heartsArray[lastElementIndex]
+        lastHeart.removeFromParent()
+        heartsArray.remove(at: lastElementIndex)
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+          self.isHit = false
+        }
+      } else {
+        dying()
+      }
+      
+      invincible()
+    }
+  }
+  
+  //죽고나서 2초동안은 무적 상태
+  func invincible() {
+    player?.physicsBody?.categoryBitMask = 0
+    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+      self.player?.physicsBody?.categoryBitMask = 2
+    }
+  }
+  
+  func dying() {
+    //시작위치로
+    let dieAction = SKAction.move(to: CGPoint(x: -300, y: -100), duration: 0.1)
+    player?.run(dieAction)
+    self.removeAllActions()
+    
+    fillHearts(count: 3)
+  }
 }
 
 //gameloop
@@ -237,8 +293,10 @@ extension GameScene: SKPhysicsContactDelegate {
     
     //플레이어가 트랩에 부딪히면 시작 위치로
     if collision.matches(.player, .killing) {
-      let die = SKAction.move(to: CGPoint(x: -300, y: -100), duration: 0)
-      player?.run(die)
+      loseHeart()
+      isHit = true
+      
+      playerStateMachine.enter(StunnedState.self)
     }
     
     if collision.matches(.player, .ground) {

@@ -26,6 +26,10 @@ class JumpingState: PlayerState {
   
   override func isValidNextState(_ stateClass: AnyClass) -> Bool {
     
+    if stateClass is StunnedState.Type {
+      return true
+    }
+    
     if hasFinishedJumping && stateClass is LandingState.Type {
       return true
     }
@@ -115,6 +119,38 @@ class WalkingState: PlayerState {
   }
 }
 
+//무적 상태
 class StunnedState: PlayerState {
   
+  var isStunned: Bool = false
+  
+  override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+    if isStunned {
+      return false
+    }
+    
+    switch stateClass {
+    case is IdleState.Type:
+      return true
+    default:
+      return false
+    }
+  }
+  
+  let flashAction = SKAction.repeat(.sequence([
+    .fadeAlpha(to: 0.5, duration: 0.01),
+    .wait(forDuration: 0.25),
+    .fadeAlpha(to: 1.0, duration: 0.01),
+    .wait(forDuration: 0.25)
+    ]), count: 5)
+  
+  override func didEnter(from previousState: GKState?) {
+    isStunned = true
+    playerNode.run(flashAction)
+    
+    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
+      self.isStunned = false
+      self.stateMachine?.enter(IdleState.self)
+    }
+  }
 }
