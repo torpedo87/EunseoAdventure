@@ -1,15 +1,15 @@
 //
-//  Level1.swift
+//  Level2.swift
 //  EunseoAdventure
 //
-//  Created by junwoo on 14/11/2018.
+//  Created by junwoo on 15/11/2018.
 //  Copyright © 2018 samchon. All rights reserved.
 //
 
 import Foundation
 import SpriteKit
 
-class Level1: GameScene {
+class Level2: GameScene {
   
   override func didMove(to view: SKView) {
     super.didMove(to: view)
@@ -35,11 +35,6 @@ class Level1: GameScene {
   override func update(_ currentTime: TimeInterval) {
     super.update(currentTime)
     
-    if score >= 1 {
-      let nextLevel = GameScene(fileNamed: "Level2")
-      nextLevel?.scaleMode = .aspectFill
-      view?.presentScene(nextLevel)
-      run(Sound.levelUp.action)
-    }
   }
 }
+

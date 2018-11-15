@@ -90,6 +90,11 @@ class GameScene: SKScene {
     scoreLabel.horizontalAlignmentMode = .right
     scoreLabel.text = String(score)
     cameraNode?.addChild(scoreLabel)
+    
+    //background music
+//    let soundAction = SKAction.repeatForever(SKAction.playSoundFileNamed("music.wav",
+//                                                                         waitForCompletion: false))
+//    run(soundAction)
   }
 }
 
@@ -107,6 +112,7 @@ extension GameScene {
       //바깥 터치하면 플레이어 점프
       if !(joystick?.contains(location))! {
         playerStateMachine.enter(JumpingState.self)
+        run(Sound.jump.action)
       }
     }
   }
@@ -302,7 +308,7 @@ extension GameScene: SKPhysicsContactDelegate {
     if collision.matches(.player, .killing) {
       loseHeart()
       isHit = true
-      
+      run(Sound.hit.action)
       playerStateMachine.enter(StunnedState.self)
     }
     
@@ -324,6 +330,7 @@ extension GameScene: SKPhysicsContactDelegate {
         rewardTouch()
         rewardIsNotTouched = false
       }
+      run(Sound.reward.action)
     }
     
     //별똥별이 땅에 떨어지면 사라진다
@@ -336,6 +343,7 @@ extension GameScene: SKPhysicsContactDelegate {
         createMolten(at: meteor.position)
         meteor.removeFromParent()
       }
+      run(Sound.meteorFalling.action)
     }
   }
 }

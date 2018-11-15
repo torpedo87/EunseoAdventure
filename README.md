@@ -13,6 +13,7 @@
 - SKScene : The root node for all Sprite Kit objects displayed in a view.
 - SKScene의 camera 이름을 camera 라고 하면 안되고 다른 이름 써야함
 - didMove(to:) : Called immediately after a scene is presented by a view.
+- update(TimeInterval) : Performs any scene-specific updates that need to occur before scene actions are evaluated.
 
 
 ## SKPhysicsContactDelegate
